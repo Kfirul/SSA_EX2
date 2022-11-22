@@ -18,10 +18,10 @@ my_mat.a: my_mat.o
 	ranlib my_mat.a 
 
 ## Making main file
-connection: my_mat.a main.o
-	$(GCC) $(FLAGS) main.o my_mat.a -o connection -lm
+connections: my_mat.a main.o
+	$(GCC) $(FLAGS) main.o my_mat.a -o connections -lm
 
-all: connection
+all: connections
 
 clean: 
-	rm -f *.o *.a connection
+	rm -f *.o *.a connections
