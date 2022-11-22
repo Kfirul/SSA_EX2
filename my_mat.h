@@ -1,3 +1,3 @@
 void makeMat();
 void isConnect();
-void shortestPath();
+void shortestPath();   
