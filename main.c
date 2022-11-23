@@ -1,17 +1,18 @@
 #include<stdio.h>
 #include"my_mat.h"
 
-int main(){
+int main()
+{
+
     char menu;
+    scanf("%c", &menu);
+    while (menu=='A' ||menu=='B'||menu=='C')
+    {
+        if (menu=='A') initializeMat();
+        if (menu=='B') isConnected();
+        if (menu=='C') shortestPath();
+        scanf(" %c", &menu);
 
-    while(scanf("%c",&menu)!=EOF && menu!='D'){
-
-        if(menu=='A')  makeMat();
-        
-        if(menu=='B') isConnect();
-        
-        if(menu=='C') shortestPath();
-        
     }
-       return 0;   
-    }
+    return 0;
+}
