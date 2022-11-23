@@ -25,7 +25,7 @@ void floydWarshallAlgorithm(int a[SIZE][SIZE])
         {
             for (int j = 0; j < SIZE; j++)
             {
-/*
+
                 if (a[i][k] != 0 && a[k][j] != 0 && i != j)
                 {
 
@@ -34,9 +34,7 @@ void floydWarshallAlgorithm(int a[SIZE][SIZE])
 
                     else
                         a[i][j] = fmin(a[i][j], a[i][k] + a[k][j]);
-                }*/
-                if (a[i][j]!=0&&a[i][k]!=0&&a[k][j]!=0) a[i][j] = fmin(a[i][j], a[i][k]+a[k][j]);
-                if (i!=j&&a[i][j]==0&&a[i][k]!=0&&a[k][j]!=0) a[i][j] = a[i][k]+a[k][j]; 
+                }
             }
         }
     }
@@ -47,7 +45,7 @@ void floydWarshallAlgorithm(int a[SIZE][SIZE])
         for (i = 0; i < SIZE; i++)
         {
             for (j = 0; j < SIZE; j++)
-                scanf("%d ", &mat[i][j]);
+                scanf("%d", &mat[i][j]);
             }
         floydWarshallAlgorithm(mat);
         
