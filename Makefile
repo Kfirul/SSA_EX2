@@ -7,7 +7,7 @@ FLAGS = -Wall -g
 ##Making o files
 
 main.o: main.c
-	$(GCC) $(FLAGS) -fPIC-c main.c
+	$(GCC) $(FLAGS) -fPIC -c main.c
 
 my_mat.o: my_mat.c 
 	$(GCC) $(FLAGS) -fPIC -c my_mat.c 
