@@ -47,7 +47,7 @@ void floydWarshallAlgorithm(int a[SIZE][SIZE])
             for (j = 0; j < SIZE; j++)
                 scanf("%d ", &mat[i][j]);
             }
-        
+        floydWarshallAlgorithm(mat);
         
     }
 
