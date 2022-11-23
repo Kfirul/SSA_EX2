@@ -2,15 +2,15 @@
 
 GCC = gcc
 AR = ar -rcs
-FLAGS = -Wall -g
+FLAGS = -Wall -g 
 
 ##Making o files
 
 main.o: main.c
-	$(GCC) $(FLAGS) -c main.c
+	$(GCC) $(FLAGS) -fPIC-c main.c
 
 my_mat.o: my_mat.c 
-	$(GCC) $(FLAGS) -c my_mat.c 
+	$(GCC) $(FLAGS) -fPIC -c my_mat.c 
 
 ## Making my_mat library
 my_mat.a: my_mat.o
