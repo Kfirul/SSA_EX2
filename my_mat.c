@@ -26,8 +26,14 @@ void floydWarshallAlgorithm(){
             for (int j = 0; j < SIZE; j++)
             {
 
-                if (mat[i][j]!=0&&mat[i][k]!=0&&mat[k][j]!=0) mat[i][j] = fmin(mat[i][j], mat[i][k]+mat[k][j]);
-                if (i!=j&&mat[i][j]==0&&mat[i][k]!=0&&mat[k][j]!=0) mat[i][j] = mat[i][k]+mat[k][j];  
+                if (mat[i][k] != 0 && mat[k][j] != 0 && i != j)
+                {
+
+                    if (mat[i][j] == 0)
+                        mat[i][j] = mat[i][k] + mat[k][j];
+
+                    else
+                        mat[i][j] = fmin(mat[i][j], mat[i][k] + mat[k][j]);  
                 
                 }
             }
