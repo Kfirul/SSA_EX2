@@ -34,6 +34,7 @@ void floydWarshallAlgorithm(int a[SIZE][SIZE])
 
                     else
                         a[i][j] = fmin(a[i][j], a[i][k] + a[k][j]);
+                
                 }
             }
         }
@@ -48,7 +49,6 @@ void floydWarshallAlgorithm(int a[SIZE][SIZE])
                 scanf("%d", &mat[i][j]);
             }
         floydWarshallAlgorithm(mat);
-        
     }
 
     void isConnect()
