@@ -4,19 +4,19 @@
 
 int mat[SIZE][SIZE];
 // Test function
-void printMat(int a[SIZE][SIZE])
+void printMat()
 {
     for (int i = 0; i < SIZE; i++)
     {
         for (int j = 0; j < SIZE; j++)
         {
-            printf("%d ", a[i][j]);
+            printf("%d ", mat[i][j]);
         }
         printf("\n");
     }
 }
 
-void floydWarshallAlgorithm(int a[SIZE][SIZE])
+void floydWarshallAlgorithm()
 {
 
     for (int k = 0; k < SIZE; k++)
@@ -26,14 +26,14 @@ void floydWarshallAlgorithm(int a[SIZE][SIZE])
             for (int j = 0; j < SIZE; j++)
             {
 
-                if (a[i][k] != 0 && a[k][j] != 0 && i != j)
+                if (mat[i][k] != 0 && mat[k][j] != 0 && i != j)
                 {
 
-                    if (a[i][j] == 0)
-                        a[i][j] = a[i][k] + a[k][j];
+                    if (mat[i][j] == 0)
+                        mat[i][j] = mat[i][k] + mat[k][j];
 
                     else
-                        a[i][j] = fmin(a[i][j], a[i][k] + a[k][j]);
+                        mat[i][j] = fmin(mat[i][j], mat[i][k] + mat[k][j]);
                 
                 }
             }
@@ -48,7 +48,7 @@ void floydWarshallAlgorithm(int a[SIZE][SIZE])
             for (j = 0; j < SIZE; j++)
                 scanf("%d", &mat[i][j]);
             }
-        floydWarshallAlgorithm(mat);
+        floydWarshallAlgorithm();
     }
 
     void isConnect()
