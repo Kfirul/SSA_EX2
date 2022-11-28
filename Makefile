@@ -6,10 +6,10 @@ FLAGS = -Wall -g
 
 ##Making o files
 
-main.o: main.c
+main.o: main.c my_mat.h
 	$(GCC) $(FLAGS) -fPIC -c main.c
 
-my_mat.o: my_mat.c 
+my_mat.o: my_mat.c my_mat.h
 	$(GCC) $(FLAGS) -fPIC -c my_mat.c 
 
 ## Making my_mat library
