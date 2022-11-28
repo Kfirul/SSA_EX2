@@ -3,18 +3,6 @@
 #define SIZE 10
 
 int mat[SIZE][SIZE];
-// Test function
-void printMat()
-{
-    for (int i = 0; i < SIZE; i++)
-    {
-        for (int j = 0; j < SIZE; j++)
-        {
-            printf("%d ", mat[i][j]);
-        }
-        printf("\n");
-    }
-}
 
 void floydWarshallAlgorithm(){
 
@@ -24,7 +12,6 @@ void floydWarshallAlgorithm(){
         {
             for (int j = 0; j < SIZE; j++)
             {
-/*
                 if (mat[i][k] != 0 && mat[k][j] != 0 && i != j)
                 {
 
@@ -35,9 +22,7 @@ void floydWarshallAlgorithm(){
                         mat[i][j] = fmin(mat[i][j], mat[i][k] + mat[k][j]);  
                 
                 }
-                */
-               if (mat[i][j]!=0&&mat[i][k]!=0&&mat[k][j]!=0) mat[i][j] = fmin(mat[i][j], mat[i][k]+mat[k][j]);
-                if (i!=j&&mat[i][j]==0&&mat[i][k]!=0&&mat[k][j]!=0) mat[i][j] = mat[i][k]+mat[k][j];  
+                 
             }
         }
     }
@@ -49,15 +34,16 @@ void floydWarshallAlgorithm(){
         for (i = 0; i < SIZE; i++)
         {
             for (j = 0; j < SIZE; j++)
-                scanf("%d", &mat[i][j]);
+                if(scanf("%d", &mat[i][j])!=EOF);
             }
+
         floydWarshallAlgorithm();
     }
 
     void isConnect()
     {
         int i, j;
-        scanf("%d %d", &i, &j);
+        if(scanf("%d %d", &i, &j)!=EOF);
         if (mat[i][j] == 0)
             printf("False\n");
         else
@@ -67,7 +53,7 @@ void floydWarshallAlgorithm(){
     void shortestPath()
     {
         int i, j;
-        scanf("%d %d", &i, &j);
+        if(scanf("%d %d", &i, &j)!=EOF);
         if (mat[i][j] == 0)
             printf("-1\n");
         else
