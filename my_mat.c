@@ -18,14 +18,13 @@ void printMat()
 
 void floydWarshallAlgorithm(){
 
-
     for (int k = 0; k < SIZE; k++)
     {
         for (int i = 0; i < SIZE; i++)
         {
             for (int j = 0; j < SIZE; j++)
             {
-
+/*
                 if (mat[i][k] != 0 && mat[k][j] != 0 && i != j)
                 {
 
@@ -36,10 +35,14 @@ void floydWarshallAlgorithm(){
                         mat[i][j] = fmin(mat[i][j], mat[i][k] + mat[k][j]);  
                 
                 }
+                */
+               if (mat[i][j]!=0&&mat[i][k]!=0&&mat[k][j]!=0) mat[i][j] = fmin(mat[i][j], mat[i][k]+mat[k][j]);
+                if (i!=j&&mat[i][j]==0&&mat[i][k]!=0&&mat[k][j]!=0) mat[i][j] = mat[i][k]+mat[k][j];  
             }
         }
     }
 }
+
     void makeMat()
     {
         int i, j;
